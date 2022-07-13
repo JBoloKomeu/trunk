@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl">
+  <name>adpter</name>
+  <classpath>C:\Users\eduar\Desktop\connector-api-1.5.jar</classpath>
+  <classpath>C:\Users\eduar\Desktop\jaybird-4.0.5.java8.jar</classpath>
+  <classpath>C:\Users\eduar\Desktop\jaybird-full-4.0.5.java8.jar</classpath>
+  <classpath>C:\Users\eduar\Desktop\jaybird-4.0.5.java8 (2)\jaybird-4.0.5.java8.jar</classpath>
+  <classpath>C:\Users\eduar\Desktop\jaybird-4.0.5.java8 (2)\jaybird-4.0.5.java8-javadoc.jar</classpath>
+  <classpath>C:\Users\eduar\Desktop\jaybird-4.0.5.java8 (2)\jaybird-4.0.5.java8-sources.jar</classpath>
+  <classpath>C:\Users\eduar\Desktop\jaybird-4.0.5.java8 (2)\jaybird-full-4.0.5.java8.jar</classpath>
+  <classpath>C:\Users\eduar\Desktop\jaybird-4.0.5.java8 (2)\lib\antlr-runtime-4.7.2.jar</classpath>
+  <classpath>C:\Users\eduar\Desktop\jaybird-4.0.5.java8 (2)\lib\connector-api-1.5.jar</classpath>
+  <classpath>C:\Users\eduar\Desktop\jaybird-4.0.5.java8 (2)\lib\jna-5.5.0.jar</classpath>
+  <driver>org.firebirdsql.jdbc.FBDriver</driver>
+  <username>SYSDBA</username>
+  <password>masterkey</password>
+  <url>jdbc:firebirdsql:localhost/3050:E:/Bancos/DBSGBG.FDB</url>
+  <database></database>
+  <savePassword>true</savePassword>
+  <serverAddress></serverAddress>
+  <readOnly>true</readOnly>
+</jdbcDataAdapter>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6f587dc-94a9-4804-b303-7b3c0dceaae3">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src\TesteReport\DataAdapter.jrdax"/>
+	<queryString language="SQL">
+		<![CDATA[select * from  "TBCLIENTE"]]>
+	</queryString>
+	<field name="IDCLIENTE" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IDCLIENTE"/>
+		<property name="com.jaspersoft.studio.field.label" value="IDCLIENTE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBCLIENTE"/>
+	</field>
+	<field name="NOME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOME"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOME"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBCLIENTE"/>
+	</field>
+	<field name="CPF" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CPF"/>
+		<property name="com.jaspersoft.studio.field.label" value="CPF"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBCLIENTE"/>
+	</field>
+	<field name="TELEFONE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TELEFONE"/>
+		<property name="com.jaspersoft.studio.field.label" value="TELEFONE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBCLIENTE"/>
+	</field>
+	<field name="BAIRRO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BAIRRO"/>
+		<property name="com.jaspersoft.studio.field.label" value="BAIRRO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBCLIENTE"/>
+	</field>
+	<field name="CIDADE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CIDADE"/>
+		<property name="com.jaspersoft.studio.field.label" value="CIDADE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBCLIENTE"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="88" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="57" width="100" height="30" uuid="1eb5c9d4-e68c-4614-b8cf-6a1ca038ea52"/>
+				<textFieldExpression><![CDATA["ID"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="120" y="57" width="100" height="30" uuid="68f29e91-3d47-4461-9364-dd7569ce74ab"/>
+				<text><![CDATA["NOME"]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="560" height="2" uuid="a4f5d856-1fa5-4c8a-871a-675e9ec479d6"/>
+			</line>
+			<line>
+				<reportElement x="20" y="87" width="200" height="1" uuid="18243592-e1c1-4b87-91bf-faa56b23f0af"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="0" width="100" height="30" uuid="11594281-fc23-4099-a29d-9f22d83c09a4"/>
+				<textFieldExpression><![CDATA[$F{IDCLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="100" height="30" uuid="3b1e8f31-ba74-4337-94b7-b01d11e1eb11"/>
+				<textFieldExpression><![CDATA[$F{NOME}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="20" y="30" width="200" height="1" uuid="006871ae-3984-4225-9e04-bbe29bd5190f"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

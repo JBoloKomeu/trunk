@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relTicket" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="76b7a7a5-13a9-4fd7-812c-9338999f974c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src\TesteReport\DataAdapter.jrdax"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="ID_TICKET" class="java.lang.Integer" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[select tb.idticketbalanca, tb.idproduto, tb.idcliente, tb.idfuncentrada, tb.idfuncsaida, tb.placaveiculo, tb.nomemotorista
+      , tb.pesoentrada, tb.pesosaida, tb.pesoliquido, tb.operacao, tb.observacao, tb.dataentrada, tb.horaentrada, tb.datasaida
+      , tb.horasaida
+      , (select prod.descricao from tbProduto prod where prod.idProduto = tb.idproduto) as descProduto
+      , (select cli.nome from tbCliente cli where cli.idCliente = tb.idcliente) as nomeCliente
+      , (select func.nome from tbFuncionario func where func.idfuncionario = tb.idfuncentrada) as nomeFuncEnt
+      , (select func.nome from tbFuncionario func where func.idfuncionario = tb.idfuncentrada) as nomeFuncSai
+   from tbTicketBalanca tb
+  where idTicketBalanca = 2]]>
+	</queryString>
+	<field name="IDTICKETBALANCA" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IDTICKETBALANCA"/>
+		<property name="com.jaspersoft.studio.field.label" value="IDTICKETBALANCA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="IDPRODUTO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IDPRODUTO"/>
+		<property name="com.jaspersoft.studio.field.label" value="IDPRODUTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="IDCLIENTE" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IDCLIENTE"/>
+		<property name="com.jaspersoft.studio.field.label" value="IDCLIENTE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="IDFUNCENTRADA" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IDFUNCENTRADA"/>
+		<property name="com.jaspersoft.studio.field.label" value="IDFUNCENTRADA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="IDFUNCSAIDA" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IDFUNCSAIDA"/>
+		<property name="com.jaspersoft.studio.field.label" value="IDFUNCSAIDA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="PLACAVEICULO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PLACAVEICULO"/>
+		<property name="com.jaspersoft.studio.field.label" value="PLACAVEICULO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="NOMEMOTORISTA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOMEMOTORISTA"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOMEMOTORISTA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="PESOENTRADA" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="PESOENTRADA"/>
+		<property name="com.jaspersoft.studio.field.label" value="PESOENTRADA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="PESOSAIDA" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="PESOSAIDA"/>
+		<property name="com.jaspersoft.studio.field.label" value="PESOSAIDA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="PESOLIQUIDO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="PESOLIQUIDO"/>
+		<property name="com.jaspersoft.studio.field.label" value="PESOLIQUIDO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="OPERACAO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OPERACAO"/>
+		<property name="com.jaspersoft.studio.field.label" value="OPERACAO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="OBSERVACAO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OBSERVACAO"/>
+		<property name="com.jaspersoft.studio.field.label" value="OBSERVACAO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="DATAENTRADA" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="DATAENTRADA"/>
+		<property name="com.jaspersoft.studio.field.label" value="DATAENTRADA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="HORAENTRADA" class="java.sql.Time">
+		<property name="com.jaspersoft.studio.field.name" value="HORAENTRADA"/>
+		<property name="com.jaspersoft.studio.field.label" value="HORAENTRADA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="DATASAIDA" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="DATASAIDA"/>
+		<property name="com.jaspersoft.studio.field.label" value="DATASAIDA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="HORASAIDA" class="java.sql.Time">
+		<property name="com.jaspersoft.studio.field.name" value="HORASAIDA"/>
+		<property name="com.jaspersoft.studio.field.label" value="HORASAIDA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TBTICKETBALANCA"/>
+	</field>
+	<field name="DESCPRODUTO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value=""/>
+		<property name="com.jaspersoft.studio.field.label" value="DESCPRODUTO"/>
+	</field>
+	<field name="NOMECLIENTE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value=""/>
+		<property name="com.jaspersoft.studio.field.label" value="NOMECLIENTE"/>
+	</field>
+	<field name="NOMEFUNCENT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value=""/>
+		<property name="com.jaspersoft.studio.field.label" value="NOMEFUNCENT"/>
+	</field>
+	<field name="NOMEFUNCSAI" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value=""/>
+		<property name="com.jaspersoft.studio.field.label" value="NOMEFUNCSAI"/>
+	</field>
+	<pageHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="12" y="-6" width="163" height="29" uuid="9fa26175-bd4f-48ff-88f2-d39466ca4d3e">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box topPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[Agrícola Rogiski]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="20" width="132" height="39" uuid="bc11a5dc-9079-4ea6-83ad-ca6a494a3992"/>
+				<text><![CDATA[Prol. Rua São Luiz
+	Irati, PR
+Fone: (42) 99941-7408
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="15" width="198" height="27" uuid="38aa91a9-728c-4eb4-8151-ea05e92f77a2"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Ticket pesagem de recebimento nº : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="462" y="15" width="100" height="30" uuid="fbb7c157-1e30-4e61-ad61-4c01e341bb2c"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{IDTICKETBALANCA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="715" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="561" height="1" uuid="e06354e8-cfb8-4171-9c7a-69e8d6599c7c"/>
+			</line>
+			<staticText>
+				<reportElement x="30" y="20" width="100" height="19" uuid="478352cf-38e1-4132-a9ae-d0122533d750"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Placa do Veículo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="39" width="53" height="19" uuid="1b9d105d-dd5c-4a55-9299-722c07513fc4"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PLACAVEICULO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="70" width="100" height="19" uuid="6a1deb18-174f-4e8f-be74-175b2cd73c44"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="90" width="150" height="19" uuid="a6afd48b-01f7-4d99-b083-22f6a28d0e78"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOMECLIENTE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="120" width="100" height="19" uuid="06a9e8cb-ddc8-486d-beda-bd00e6307810"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Produto:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="140" width="150" height="19" uuid="c389b2f9-84d6-4d11-8e92-8ad3d4686817"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{DESCPRODUTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="190" width="150" height="19" uuid="8644d856-6405-473e-9a22-85ba40603280"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{OBSERVACAO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="170" width="100" height="19" uuid="00234b33-bfe7-4df3-a3e5-c36744617c46"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Observações:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="206" y="40" width="149" height="1" uuid="8d3317b7-f5d2-4134-8a73-769140f0b52c"/>
+			</line>
+			<line>
+				<reportElement x="402" y="39" width="160" height="1" uuid="c7c2f710-c09b-4323-8593-3b2e16dd38c9"/>
+			</line>
+			<staticText>
+				<reportElement x="206" y="20" width="149" height="19" uuid="7cbf8cfd-9b7c-426c-9f63-51619addfd1a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Pesagem Entrada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="20" width="161" height="19" uuid="faa70149-39ca-4380-9558-89e13506ce74"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Pesagem Saída]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="206" y="40" width="60" height="18" uuid="cf1a7802-c1a2-49da-ac24-1c3a8683649f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Data / Hora:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="40" width="54" height="18" uuid="db1e491c-584c-4daf-b659-d04f465eeaaf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATAENTRADA}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Auto" pattern="HH:mm">
+				<reportElement x="320" y="40" width="35" height="18" uuid="89aef0b1-5ff8-46dd-b57e-c27f1818a06c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{HORAENTRADA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="206" y="58" width="60" height="18" uuid="7f86c06e-1a7b-479d-a4ee-ddb0860bc70e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Motorista:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="206" y="76" width="60" height="18" uuid="e6a63087-71fb-4c7a-bed0-2db75112c1e9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Operador:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="58" width="89" height="18" uuid="98fff23d-196d-496a-a510-c23debfd8ad6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOMEMOTORISTA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="206" y="94" width="60" height="18" uuid="8777d33a-7468-4dac-adc1-045ce385e59c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Peso:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="94" width="89" height="19" uuid="6afeeaae-2edd-4740-8072-c099ae5ca4b2"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PESOENTRADA}+" Kg"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="402" y="42" width="60" height="18" uuid="d0e51fa0-e2f7-4e7e-a996-c46bfe3f28c5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Data / Hora:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="78" width="60" height="18" uuid="d6ad5a79-0c3e-48d3-8833-cfe8315a888e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Operador:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="60" width="60" height="18" uuid="e6db747a-cd05-4ff3-ad5c-74093d963447"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Motorista:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="96" width="60" height="18" uuid="a677db2b-41d0-4163-9732-6007b5334117"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Peso:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="462" y="42" width="58" height="18" uuid="7544cb65-c237-4781-a728-12c2a26ea9a0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATASAIDA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="96" width="89" height="19" uuid="68a656d3-5711-41c4-bdee-55a4b4e68350"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PESOSAIDA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="60" width="89" height="18" uuid="d20736f4-65ac-408f-85ec-2d34fed11ebe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOMEMOTORISTA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="250" y="179" width="100" height="30" uuid="28a91987-5864-486c-a28e-bd76e1243fd5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Total Líquido: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="179" width="100" height="30" uuid="5269d45b-70eb-469f-88bc-e6417eb40bb5"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PESOLIQUIDO} + "Kg"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="259" width="150" height="20" uuid="4ab0da33-9c83-4e33-9e9b-d303bc1ee70b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Operador]]></text>
+			</staticText>
+			<line>
+				<reportElement x="27" y="259" width="150" height="1" uuid="3ad18b49-fa53-4b02-b250-8031312c8fa4"/>
+			</line>
+			<line>
+				<reportElement x="366" y="259" width="150" height="1" uuid="ff5ee5ae-0674-4a3e-b7be-9ae619b01587"/>
+			</line>
+			<staticText>
+				<reportElement x="367" y="260" width="150" height="20" uuid="f6ed7745-77a0-4a40-ac1b-b0c269d3f061"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Motorista]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="6" y="354" width="163" height="29" uuid="3d645e65-6b10-40ec-9b41-2bc8d1e2ffb9">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box topPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="16"/>
+				</textElement>
+				<text><![CDATA[Agrícola Rogiski]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="380" width="132" height="39" uuid="28312636-61e6-41dc-bf55-c505e83f61de"/>
+				<text><![CDATA[Prol. Rua São Luiz
+	Irati, PR
+Fone: (42) 99941-7408
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="258" y="375" width="198" height="27" uuid="47e75812-6d40-4549-99a6-ace48840fc38"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Ticket pesagem de recebimento nº : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="456" y="375" width="100" height="30" uuid="a8960f50-13fd-4352-8bb3-ebf7be94a710"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{IDTICKETBALANCA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="78" width="89" height="18" uuid="8e9e9e10-c634-4c55-8952-f89ded4560b5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOMEFUNCENT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="78" width="89" height="18" uuid="48f17d46-71e7-4033-8e2b-564027803691"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOMEFUNCSAI}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="420" width="561" height="1" uuid="5ceb7d39-b2e6-45e6-90d3-4d2ce910a4c9"/>
+			</line>
+			<textField evaluationTime="Auto" pattern="HH:mm">
+				<reportElement x="520" y="42" width="35" height="18" uuid="d215b59c-37cd-4928-9f94-68af7d3cc3d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{HORASAIDA}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="258" y="326" width="8" height="1" uuid="8dadbc29-758e-46ae-870f-e54d9bac7c16"/>
+			</line>
+			<line>
+				<reportElement x="291" y="326" width="8" height="1" uuid="61198249-b3fe-41f8-82e9-c0fc10437e4d"/>
+			</line>
+			<line>
+				<reportElement x="275" y="326" width="8" height="1" uuid="2466e76a-872c-44c0-a571-9a920b245cd6"/>
+			</line>
+			<textField>
+				<reportElement x="462" y="480" width="89" height="18" uuid="a5247d98-25fa-4f45-87e0-d03483f94219"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOMEMOTORISTA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="460" width="54" height="18" uuid="065c4ad7-f684-4db8-9a47-1dc1fbcc226b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATAENTRADA}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="27" y="679" width="150" height="1" uuid="8a02eea0-7c5a-44a2-9858-c0997f27713a"/>
+			</line>
+			<textField>
+				<reportElement x="30" y="560" width="150" height="19" uuid="f17e7447-d067-43d9-9f05-dbf04d9c7ca6"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{DESCPRODUTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="510" width="150" height="19" uuid="b0ce6662-f084-4efa-aeba-e17372888632"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOMECLIENTE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="206" y="440" width="149" height="19" uuid="d0b8c95b-26ee-4fa3-9d3d-f35aae2bebba"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Pesagem Entrada]]></text>
+			</staticText>
+			<textField evaluationTime="Auto" pattern="HH:mm">
+				<reportElement x="523" y="462" width="35" height="18" uuid="3deb3589-7583-42b2-823a-b28e4d8042fe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{HORASAIDA}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="206" y="460" width="149" height="1" uuid="a717c7f8-263c-4fd4-92fd-3b9df7aba211"/>
+			</line>
+			<staticText>
+				<reportElement x="206" y="460" width="60" height="18" uuid="1de91450-a824-41ac-be5d-9438b7aa0f07"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Data / Hora:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="610" width="150" height="19" uuid="3e835775-4d7c-4912-b62b-a49caa3214fc"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{OBSERVACAO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="459" width="53" height="19" uuid="c08b2b19-ba9d-4c61-bbcf-7d54355ceea1"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PLACAVEICULO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="402" y="462" width="60" height="18" uuid="3ff3360d-e7d9-49e2-834b-4de36577367d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Data / Hora:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="498" width="89" height="18" uuid="ffb4d805-48bf-43b2-8705-653dcc971fa4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOMEFUNCENT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="490" width="100" height="19" uuid="4c7075ea-8f38-4040-a9c4-de807125a63c"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="480" width="60" height="18" uuid="4998ca75-0ee0-4483-80b4-82f76e6f320d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Motorista:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="440" width="100" height="19" uuid="78473152-3900-4b01-a8ea-a207591eee9b"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Placa do Veículo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="514" width="89" height="19" uuid="15e6211d-5ef5-4d8d-9b78-eff5c138ab85"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PESOENTRADA}+" Kg"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="250" y="599" width="100" height="30" uuid="6d8c4cd3-658f-4ea3-b780-c3ea9fee4dba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Total Líquido: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="590" width="100" height="19" uuid="d8998607-2828-4c38-9321-b104926a276c"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Observações:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="462" y="462" width="58" height="18" uuid="3c22f7db-a0e4-46d9-a83c-c31e7211b235"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATASAIDA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="206" y="496" width="60" height="18" uuid="b96c18a5-d9de-4e7d-ae7e-4a5adba5aa57"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Operador:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="516" width="60" height="18" uuid="78819d6b-80ea-4bdc-b52e-ac969a56a675"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Peso:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="462" y="516" width="89" height="19" uuid="f7bdd9be-9199-4742-a6e6-437a979795df"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PESOSAIDA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="206" y="478" width="60" height="18" uuid="dd0e57ad-db16-4eaa-a425-66f18a5017bf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Motorista:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="462" y="498" width="89" height="18" uuid="cdd941d9-e869-4e07-894d-ad66c1d14f69"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOMEFUNCSAI}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="540" width="100" height="19" uuid="0b91f1ad-46e9-4563-85ad-e7f7f58f8749"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Produto:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="440" width="161" height="19" uuid="96b504f4-3a0b-4237-8c86-1cc0a1c12bea"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Pesagem Saída]]></text>
+			</staticText>
+			<line>
+				<reportElement x="366" y="679" width="150" height="1" uuid="14ef5118-6d41-421a-a293-e13dd5e9d78b"/>
+			</line>
+			<textField>
+				<reportElement x="266" y="478" width="89" height="18" uuid="01fcba70-9fb8-4a86-b566-f8fb8585b7eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOMEMOTORISTA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="679" width="150" height="20" uuid="aa90994a-f7ad-4eb9-be2c-e6b1bcfc85b4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Operador]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="599" width="100" height="30" uuid="4a7ee60d-af05-40d0-9a36-785a24fdc15a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PESOLIQUIDO} + "Kg"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="367" y="680" width="150" height="20" uuid="8757b8e3-b1b2-4c53-831b-599d1cefdf50"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Motorista]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="498" width="60" height="18" uuid="94e18c09-dfa7-4210-98f6-f15e7a9a2174"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Operador:]]></text>
+			</staticText>
+			<textField evaluationTime="Auto" pattern="HH:mm">
+				<reportElement x="320" y="460" width="35" height="18" uuid="aa1e03d9-3fce-4b8f-930f-9528dae5ec98"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{HORAENTRADA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="206" y="514" width="60" height="18" uuid="598783d7-c1a0-490c-b58f-d0efec5f2df6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Peso:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+</jasperReport>
